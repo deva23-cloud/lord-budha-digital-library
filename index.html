@@ -1,0 +1,1410 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lord Budha Digital Library | Indian Education Hub</title>
+
+<meta name="description"
+content="Lord Budha Digital Library provides access to NCERT textbooks, Indian newspapers, daily current affairs, and competitive examination resources.">
+
+<style>
+:root {
+    --green: #123c2d;
+    --dark-green: #09291f;
+    --gold: #d9b66f;
+    --cream: #faf8f1;
+    --white: #ffffff;
+    --text: #23342c;
+    --muted: #68776e;
+    --border: #e7e7dc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* TOP BAR */
+
+.topbar {
+    background: var(--dark-green);
+    color: #f8f0d9;
+    text-align: center;
+    padding: 9px 15px;
+    font-size: 13px;
+    letter-spacing: .4px;
+}
+
+/* HEADER */
+
+header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 240px;
+}
+
+.brand-icon {
+    width: 49px;
+    height: 49px;
+    display: grid;
+    place-items: center;
+    background: var(--green);
+    color: var(--gold);
+    border-radius: 12px;
+    font-size: 26px;
+}
+
+.brand h1 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    color: var(--green);
+    line-height: 1.3;
+}
+
+.brand p {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 22px;
+}
+
+nav a {
+    font-size: 13px;
+    font-weight: 700;
+    color: #34483d;
+}
+
+nav a:hover {
+    color: #a57c2b;
+}
+
+.nav-button {
+    background: var(--green);
+    color: white;
+    padding: 11px 17px;
+    border-radius: 7px;
+}
+
+/* HERO */
+
+.hero {
+    background:
+        radial-gradient(circle at 85% 15%, #2b6347 0, transparent 35%),
+        linear-gradient(125deg, #09291f, #164d37);
+    color: white;
+    padding: 85px 7% 78px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "📚";
+    position: absolute;
+    right: 8%;
+    top: 50px;
+    font-size: clamp(100px, 17vw, 210px);
+    opacity: .12;
+    transform: rotate(-10deg);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 760px;
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 5vw, 61px);
+    line-height: 1.13;
+    margin-bottom: 22px;
+    max-width: 700px;
+}
+
+.hero h2 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    color: #d9e5dc;
+    max-width: 590px;
+    margin-bottom: 28px;
+    font-size: 16px;
+}
+
+.search-form {
+    display: flex;
+    max-width: 650px;
+    background: white;
+    padding: 6px;
+    border-radius: 9px;
+    gap: 5px;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 13px;
+    color: var(--text);
+}
+
+.search-form button {
+    background: var(--gold);
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero-note {
+    font-size: 12px;
+    color: #c7d9cc;
+    margin-top: 15px;
+}
+
+/* QUICK LINKS */
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 0 7%;
+    margin-top: -28px;
+    position: relative;
+    z-index: 2;
+}
+
+.quick-card {
+    background: white;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px #173e2910;
+    transition: transform .2s;
+}
+
+.quick-card:hover {
+    transform: translateY(-4px);
+}
+
+.quick-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.quick-card h3 {
+    color: var(--green);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.quick-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 75px 7%;
+    scroll-margin-top: 95px;
+}
+
+.section-white {
+    background: white;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.section-label {
+    color: #9c772d;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    color: var(--green);
+    font-family: Georgia, serif;
+    font-size: clamp(26px, 3vw, 37px);
+    line-height: 1.25;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 9px;
+}
+
+.text-link {
+    color: #8d6924;
+    font-weight: bold;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* RESOURCE CARDS */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.resource-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    transition: box-shadow .2s, transform .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-white .resource-card {
+    background: var(--cream);
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px #173e2910;
+}
+
+.resource-icon {
+    width: 49px;
+    height: 49px;
+    border-radius: 11px;
+    background: #e8efe8;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    margin-bottom: 17px;
+}
+
+.resource-card h3 {
+    color: var(--green);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.resource-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 19px;
+    flex: 1;
+}
+
+.card-button {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card-button:hover {
+    background: #246044;
+}
+
+/* CURRENT AFFAIRS */
+
+.current-affairs {
+    background: #123c2d;
+    color: white;
+    padding: 65px 7%;
+    scroll-margin-top: 90px;
+}
+
+.current-affairs .section-heading h2 {
+    color: white;
+}
+
+.current-affairs .section-heading p {
+    color: #d0dfd3;
+}
+
+.affairs-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 18px;
+}
+
+.affairs-card {
+    border: 1px solid #ffffff25;
+    background: #ffffff09;
+    border-radius: 11px;
+    padding: 25px;
+}
+
+.affairs-card .resource-icon {
+    background: #ffffff16;
+}
+
+.affairs-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.affairs-card p {
+    color: #d0dfd3;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.affairs-card a {
+    display: inline-block;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* NCERT CLASS SELECTOR */
+
+.class-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 25px;
+}
+
+.class-filter {
+    border: 1px solid #d8dfd6;
+    background: white;
+    color: var(--green);
+    padding: 9px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.class-filter.active,
+.class-filter:hover {
+    background: var(--green);
+    color: white;
+}
+
+.ncert-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.ncert-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 21px;
+}
+
+.ncert-card .class-number {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #b08a3c;
+}
+
+.ncert-card h3 {
+    font-size: 15px;
+    margin: 4px 0 8px;
+    color: var(--green);
+}
+
+.ncert-card p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.ncert-card a {
+    font-size: 12px;
+    font-weight: bold;
+    color: #8d6924;
+}
+
+/* NEWSPAPERS */
+
+.paper-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.paper-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: 10px;
+}
+
+.paper-card h3 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    color: var(--green);
+    margin-bottom: 5px;
+}
+
+.paper-card p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 17px;
+}
+
+/* EXAM CATEGORIES */
+
+.exam-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.exam-card {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.exam-card h3 {
+    color: var(--green);
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.exam-card p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 13px;
+}
+
+/* SEARCH RESULTS */
+
+.search-status {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+.search-hidden {
+    display: none !important;
+}
+
+/* ABOUT */
+
+.about-panel {
+    background: #f0f2e9;
+    border: 1px solid #e2e5d8;
+    padding: 32px;
+    border-radius: 12px;
+}
+
+.about-panel p {
+    color: #596b5f;
+    font-size: 14px;
+    max-width: 850px;
+    margin-top: 12px;
+}
+
+.owner-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.owner-detail {
+    padding: 17px;
+    border-radius: 8px;
+    background: white;
+}
+
+.owner-detail span {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 5px;
+}
+
+.owner-detail strong {
+    color: var(--green);
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--dark-green);
+    color: white;
+    padding: 45px 7% 20px;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-brand {
+    max-width: 380px;
+}
+
+.footer-brand h2 {
+    font-family: Georgia, serif;
+    color: var(--gold);
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.footer-brand p,
+.footer-address p {
+    color: #c8d7cd;
+    font-size: 13px;
+}
+
+.footer-address h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ffffff20;
+    padding-top: 18px;
+    color: #b9cbbf;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .quick-links,
+    .ncert-grid,
+    .paper-grid,
+    .exam-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card-grid,
+    .affairs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 14px 5%;
+    }
+
+    .brand {
+        min-width: 0;
+    }
+
+    .brand h1 {
+        font-size: 16px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    .hero::after {
+        right: -20px;
+        top: 25px;
+        font-size: 100px;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .search-form button {
+        padding: 10px 13px;
+    }
+
+    .quick-links {
+        padding: 0 5%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .quick-card {
+        padding: 17px;
+    }
+
+    .section,
+    .current-affairs {
+        padding: 52px 5%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .card-grid,
+    .affairs-grid,
+    .ncert-grid,
+    .paper-grid,
+    .exam-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .owner-details {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-main,
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+      .profile-img {
+            width: 5px;
+            height: 5px;
+            border-radius: 5%;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            margin-bottom: 2px
+          }
+   
+    
+}
+</style>
+</head>
+<body>
+ 
+<div class="container">
+ 
+<!-- Profile Image -->
+        <img src="C:\Users\INP\Downloads\developer.png" alt="My Profile Photo" class="profile-img">
+
+
+
+<div class="topbar">
+    A KNOWLEDGE HUB FOR INDIA • LEARN TODAY, LEAD TOMORROW
+</div>
+
+<header>
+    <a class="brand" href="#home" aria-label="Lord Budha Digital Library home">
+        <div class="brand-icon">📚</div>
+        <div>
+            <h1>Lord Budha Digital Library</h1>
+            <p> By Devarth Yadav </p>
+        </div>
+    </a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#current-affairs">Current Affairs</a>
+        <a href="#ncert">NCERT Books</a>
+        <a href="#newspapers">Newspapers</a>
+        <a href="#exams">Competitive Exams</a>
+        <a class="nav-button" href="#about">About Library</a>
+    </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="eyebrow">Your Gateway to Knowledge</div>
+
+        <h2>
+            Read More.<br>
+            <span>Learn More.</span><br>
+            Achieve More.
+        </h2>
+
+        <p class="hero-description">
+            Explore NCERT textbooks, daily current affairs, Indian
+            newspapers, general knowledge, and study resources for
+            India's leading competitive examinations.
+        </p>
+
+        <form class="search-form" id="searchForm">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search NCERT, UPSC, newspapers, science..."
+                aria-label="Search library resources"
+            >
+            <button type="submit">Search ↗</button>
+        </form>
+
+        <p class="hero-note">
+            Free educational resources • Official learning links • For Indian learners
+        </p>
+    </div>
+</section>
+
+<!-- QUICK LINKS -->
+<section class="quick-links" aria-label="Popular resources">
+    <a class="quick-card" href="#current-affairs">
+        <div class="quick-icon">🗞️</div>
+        <h3>Daily Current Affairs</h3>
+        <p>Stay informed about India and the world.</p>
+    </a>
+
+    <a class="quick-card" href="#ncert">
+        <div class="quick-icon">📚</div>
+        <h3>NCERT Textbooks</h3>
+        <p>Explore school books for Classes 1–12.</p>
+    </a>
+
+    <a class="quick-card" href="#newspapers">
+        <div class="quick-icon">📰</div>
+        <h3>Indian Newspapers</h3>
+        <p>Read news in English and Hindi.</p>
+    </a>
+
+    <a class="quick-card" href="#exams">
+        <div class="quick-icon">🎯</div>
+        <h3>Exam Preparation</h3>
+        <p>Resources for major Indian examinations.</p>
+    </a>
+</section>
+
+<!-- CURRENT AFFAIRS -->
+<section class="current-affairs" id="current-affairs">
+    <div class="section-heading">
+        <div>
+            <div class="section-label">Stay Updated</div>
+            <h2>Daily Current Affairs & General Knowledge</h2>
+            <p>Useful starting points for daily reading and exam preparation.</p>
+        </div>
+        <a class="text-link"
+           href="https://www.pib.gov.in/"
+           target="_blank" rel="noopener noreferrer">
+            Official PIB News ↗
+        </a>
+    </div>
+
+    <div class="affairs-grid">
+        <article class="affairs-card">
+            <div class="resource-icon">🇮🇳</div>
+            <h3>India & National Affairs</h3>
+            <p>
+                Government announcements, national schemes, policies,
+                and important developments.
+            </p>
+            <a href="https://www.pib.gov.in/"
+               target="_blank" rel="noopener noreferrer">
+                Read PIB Updates ↗
+            </a>
+        </article>
+
+        <article class="affairs-card">
+            <div class="resource-icon">🌍</div>
+            <h3>International Affairs</h3>
+            <p>
+                Global events, international relations, and developments
+                relevant to competitive examinations.
+            </p>
+            <a href="https://news.un.org/en/"
+               target="_blank" rel="noopener noreferrer">
+                Read UN News ↗
+            </a>
+        </article>
+
+        <article class="affairs-card">
+            <div class="resource-icon">📝</div>
+            <h3>Daily GK & Exam Updates</h3>
+            <p>
+                Practice general knowledge and check official recruitment
+                notifications and examination announcements.
+            </p>
+            <a href="https://upsc.gov.in/"
+               target="_blank" rel="noopener noreferrer">
+                Visit UPSC Official Site ↗
+            </a>
+        </article>
+    </div>
+
+    <p style="margin-top:22px;font-size:12px;color:#d0dfd3;">
+        Note: These are links to external sources, not an automatically
+        updated news feed. Visit the sources for the latest reports.
+    </p>
+</section>
+
+<!-- NCERT -->
+<section class="section" id="ncert">
+    <div class="section-heading">
+        <div>
+            <div class="section-label">School Education</div>
+            <h2>NCERT Books — Classes 1 to 12</h2>
+            <p>Find official textbook resources for different school classes.</p>
+        </div>
+        <a class="text-link"
+           href="https://ncert.nic.in/textbook.php"
+           target="_blank" rel="noopener noreferrer">
+            All NCERT Textbooks ↗
+        </a>
+    </div>
+
+    <div class="class-filters" aria-label="Filter NCERT classes">
+        <button class="class-filter active" data-class="all">All Classes</button>
+        <button class="class-filter" data-class="primary">Classes 1–5</button>
+        <button class="class-filter" data-class="middle">Classes 6–8</button>
+        <button class="class-filter" data-class="secondary">Classes 9–10</button>
+        <button class="class-filter" data-class="senior">Classes 11–12</button>
+    </div>
+
+    <p class="search-status" id="ncertStatus" aria-live="polite"></p>
+
+    <div class="ncert-grid searchable">
+        <article class="ncert-card" data-title="Class 1 NCERT books primary">
+            <div class="class-number">01</div>
+            <h3>Class 1</h3>
+            <p>Foundational learning and basic subjects.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 2 NCERT books primary">
+            <div class="class-number">02</div>
+            <h3>Class 2</h3>
+            <p>Early literacy, numeracy, and learning.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 3 NCERT books primary">
+            <div class="class-number">03</div>
+            <h3>Class 3</h3>
+            <p>School learning and foundational subjects.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 4 NCERT books primary">
+            <div class="class-number">04</div>
+            <h3>Class 4</h3>
+            <p>Core school subjects and learning resources.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 5 NCERT books primary">
+            <div class="class-number">05</div>
+            <h3>Class 5</h3>
+            <p>Primary-level school textbooks.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 6 NCERT books middle">
+            <div class="class-number">06</div>
+            <h3>Class 6</h3>
+            <p>Mathematics, science, social science, and languages.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 7 NCERT books middle">
+            <div class="class-number">07</div>
+            <h3>Class 7</h3>
+            <p>Core subjects and school study material.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 8 NCERT books middle">
+            <div class="class-number">08</div>
+            <h3>Class 8</h3>
+            <p>Subject-wise school textbooks.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 9 NCERT books secondary">
+            <div class="class-number">09</div>
+            <h3>Class 9</h3>
+            <p>Science, mathematics, SST, English, and Hindi.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 10 NCERT books secondary">
+            <div class="class-number">10</div>
+            <h3>Class 10</h3>
+            <p>Board examination preparation and core subjects.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 11 NCERT books senior">
+            <div class="class-number">11</div>
+            <h3>Class 11</h3>
+            <p>Science, commerce, humanities, and languages.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+
+        <article class="ncert-card" data-title="Class 12 NCERT books senior">
+            <div class="class-number">12</div>
+            <h3>Class 12</h3>
+            <p>Senior secondary textbooks and exam preparation.</p>
+            <a href="https://ncert.nic.in/textbook.php"
+               target="_blank" rel="noopener noreferrer">Find Textbooks ↗</a>
+        </article>
+    </div>
+</section>
+
+<!-- NEWSPAPERS -->
+<section class="section section-white" id="newspapers">
+    <div class="section-heading">
+        <div>
+            <div class="section-label">News & Journalism</div>
+            <h2>Indian Daily Newspapers</h2>
+            <p>Open newspaper websites to read current reports and editorials.</p>
+        </div>
+    </div>
+
+    <div class="paper-grid searchable">
+        <article class="paper-card" data-title="The Hindu English newspaper">
+            <h3>The Hindu</h3>
+            <p>English news, editorials, national affairs, and analysis.</p>
+            <a class="card-button"
+               href="https://www.thehindu.com/"
+               target="_blank" rel="noopener noreferrer">Read Newspaper ↗</a>
+        </article>
+
+        <article class="paper-card" data-title="Indian Express English newspaper">
+            <h3>The Indian Express</h3>
+            <p>National news, explainers, and current affairs.</p>
+            <a class="card-button"
+               href="https://indianexpress.com/"
+               target="_blank" rel="noopener noreferrer">Read Newspaper ↗</a>
+        </article>
+
+        <article class="paper-card" data-title="Dainik Jagran Hindi newspaper">
+            <h3>Dainik Jagran</h3>
+            <p>Hindi news, regional reports, and national updates.</p>
+            <a class="card-button"
+               href="https://www.jagran.com/"
+               target="_blank" rel="noopener noreferrer">हिंदी समाचार ↗</a>
+        </article>
+
+        <article class="paper-card" data-title="Amar Ujala Hindi newspaper">
+            <h3>Amar Ujala</h3>
+            <p>Hindi news and regional coverage across India.</p>
+            <a class="card-button"
+               href="https://www.amarujala.com/"
+               target="_blank" rel="noopener noreferrer">हिंदी समाचार ↗</a>
+        </article>
+
+        <article class="paper-card" data-title="The Times of India newspaper">
+            <h3>The Times of India</h3>
+            <p>English-language national and international news.</p>
+            <a class="card-button"
+               href="https://timesofindia.indiatimes.com/"
+               target="_blank" rel="noopener noreferrer">Read Newspaper ↗</a>
+        </article>
+
+        <article class="paper-card" data-title="BBC News Hindi">
+            <h3>BBC News Hindi</h3>
+            <p>Hindi-language reporting and international coverage.</p>
+            <a class="card-button"
+               href="https://www.bbc.com/hindi"
+               target="_blank" rel="noopener noreferrer">हिंदी समाचार ↗</a>
+        </article>
+
+        <article class="paper-card" data-title="Business Standard business newspaper">
+            <h3>Business Standard</h3>
+            <p>Business, economy, finance, and policy reporting.</p>
+            <a class="card-button"
+               href="https://www.business-standard.com/"
+               target="_blank" rel="noopener noreferrer">Read Newspaper ↗</a>
+        </article>
+
+        <article class="paper-card" data-title="Press Information Bureau official government news">
+            <h3>Press Information Bureau</h3>
+            <p>Official government press releases and announcements.</p>
+            <a class="card-button"
+               href="https://www.pib.gov.in/"
+               target="_blank" rel="noopener noreferrer">Official Updates ↗</a>
+        </article>
+    </div>
+
+    <p style="margin-top:20px;color:#68776e;font-size:12px;">
+        Newspaper links open external websites. Some articles or e-paper
+        editions may require a subscription. This library does not reproduce
+        or redistribute newspaper content.
+    </p>
+</section>
+
+<!-- COMPETITIVE EXAMS -->
+<section class="section" id="exams">
+    <div class="section-heading">
+        <div>
+            <div class="section-label">Prepare for Your Future</div>
+            <h2>Competitive Exam Preparation</h2>
+            <p>Useful official websites for major examinations in India.</p>
+        </div>
+    </div>
+
+    <div class="exam-grid searchable">
+        <article class="exam-card" data-title="UPSC IAS civil services">
+            <h3>🏛️ UPSC / IAS</h3>
+            <p>Civil Services examinations, notifications, and syllabus.</p>
+            <a class="text-link" href="https://upsc.gov.in/"
+               target="_blank" rel="noopener noreferrer">Official Website ↗</a>
+        </article>
+
+        <article class="exam-card" data-title="SSC CGL CHSL MTS">
+            <h3>📝 SSC Exams</h3>
+            <p>CGL, CHSL, MTS, and other Staff Selection Commission exams.</p>
+            <a class="text-link" href="https://ssc.gov.in/"
+               target="_blank" rel="noopener noreferrer">Official Website ↗</a>
+        </article>
+
+        <article class="exam-card" data-title="Railway RRB recruitment">
+            <h3>🚆 Railway Exams</h3>
+            <p>Railway recruitment information and examination updates.</p>
+            <a class="text-link" href="https://indianrailways.gov.in/"
+               target="_blank" rel="noopener noreferrer">Indian Railways ↗</a>
+        </article>
+
+        <article class="exam-card" data-title="IBPS banking PO clerk">
+            <h3>🏦 Banking / IBPS</h3>
+            <p>Banking recruitment and examination information.</p>
+            <a class="text-link" href="https://www.ibps.in/"
+               target="_blank" rel="noopener noreferrer">Official Website ↗</a>
+        </article>
+
+        <article class="exam-card" data-title="NTA CUET NEET JEE">
+            <h3>🎓 NTA / CUET / NEET</h3>
+            <p>Entrance examinations and admission-related notices.</p>
+            <a class="text-link" href="https://nta.ac.in/"
+               target="_blank" rel="noopener noreferrer">NTA Website ↗</a>
+        </article>
+
+        <article class="exam-card" data-title="NDA CDS defence examinations">
+            <h3>🛡️ NDA / CDS</h3>
+            <p>Defence entrance examinations conducted by UPSC.</p>
+            <a class="text-link" href="https://upsc.gov.in/"
+               target="_blank" rel="noopener noreferrer">UPSC Website ↗</a>
+        </article>
+
+        <article class="exam-card" data-title="Agniveer Indian Army recruitment">
+            <h3>🎖️ Indian Army</h3>
+            <p>Official Army recruitment information and notices.</p>
+            <a class="text-link" href="https://joinindianarmy.nic.in/"
+               target="_blank" rel="noopener noreferrer">Army Website ↗</a>
+        </article>
+
+        <article class="exam-card" data-title="UPPSC Uttar Pradesh state exams">
+            <h3>📍 UPPSC / UP Exams</h3>
+            <p>Uttar Pradesh state public service examination updates.</p>
+            <a class="text-link" href="https://uppsc.up.nic.in/"
+               target="_blank" rel="noopener noreferrer">UPPSC Website ↗</a>
+        </article>
+    </div>
+</section>
+
+<!-- OTHER STUDY RESOURCES -->
+<section class="section section-white" id="resources">
+    <div class="section-heading">
+        <div>
+            <div class="section-label">Build Your Foundation</div>
+            <h2>More Learning Resources</h2>
+            <p>Explore government learning platforms and open educational books.</p>
+        </div>
+    </div>
+
+    <div class="card-grid searchable">
+        <article class="resource-card"
+                 data-title="ePathshala NCERT school books">
+            <div class="resource-icon">📘</div>
+            <h3>ePathshala</h3>
+            <p>Explore digital textbooks and educational resources from NCERT.</p>
+            <a class="card-button"
+               href="https://epathshala.nic.in/"
+               target="_blank" rel="noopener noreferrer">Explore Resources ↗</a>
+        </article>
+
+        <article class="resource-card"
+                 data-title="DIKSHA Indian school education">
+            <div class="resource-icon">🎒</div>
+            <h3>DIKSHA</h3>
+            <p>Access digital learning resources for school education in India.</p>
+            <a class="card-button"
+               href="https://diksha.gov.in/"
+               target="_blank" rel="noopener noreferrer">Start Learning ↗</a>
+        </article>
+
+        <article class="resource-card"
+                 data-title="OpenStax free educational textbooks">
+            <div class="resource-icon">🌐</div>
+            <h3>Open Textbooks</h3>
+            <p>Explore freely available textbooks in selected academic subjects.</p>
+            <a class="card-button"
+               href="https://openstax.org/subjects"
+               target="_blank" rel="noopener noreferrer">Browse Books ↗</a>
+        </article>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <div class="about-panel">
+        <div class="section-label">About Our Library</div>
+        <h2 style="font-family:Georgia,serif;color:#123c2d;">
+            Lord Budha Digital Library
+        </h2>
+
+        <p>
+            Lord Budha Digital Library is designed as an educational
+            resource hub for Indian students, job aspirants, and lifelong
+            learners. Its purpose is to make school textbooks, news sources,
+            current-affairs resources, and competitive-exam information
+            easier to discover in one place.
+        </p>
+
+        <div class="owner-details">
+            <div class="owner-detail">
+                <span>LIBRARY OWNER</span>
+                <strong>Mr. Devarth Yadav</strong>
+            </div>
+
+            <div class="owner-detail">
+                <span>LIBRARY ADDRESS</span>
+                <strong>Katra Market, Shrawasti</strong>
+            </div>
+
+            <div class="owner-detail">
+                <span>FOCUS</span>
+                <strong>Education & Exam Preparation</strong>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-main">
+        <div class="footer-brand">
+            <h2>Lord Budha Digital Library</h2>
+            <p>
+                A place for knowledge, education, daily reading,
+                and competitive-exam preparation.
+            </p>
+        </div>
+
+        <div class="footer-address">
+            <h3>Library Information</h3>
+            <p>Owner: Mr. Devarth Yadav</p>
+            <p>Address: Katra Market, Shrawasti, Uttar Pradesh, India</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>
+            © <span id="year"></span> Lord Budha Digital Library
+        </span>
+        <span>Learn Today. Lead Tomorrow.</span>
+    </div>
+</footer>
+
+<script>
+/* Footer year */
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+/* Search across resources */
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
+const searchableItems = document.querySelectorAll(
+    ".ncert-card, .paper-card, .exam-card, .resource-card"
+);
+
+searchForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const query = searchInput.value.trim().toLowerCase();
+    let firstMatch = null;
+
+    searchableItems.forEach(function(item) {
+        const text = (
+            item.dataset.title + " " + item.textContent
+        ).toLowerCase();
+
+        const match = !query || text.includes(query);
+
+        item.classList.toggle("search-hidden", !match);
+
+        if (match && !firstMatch) {
+            firstMatch = item;
+        }
+    });
+
+    const status = document.getElementById("ncertStatus");
+
+    if (query && !firstMatch) {
+        status.textContent =
+            "No matching resources found. Try another search term.";
+    } else if (query) {
+        status.textContent =
+            'Showing matching resources for "' + query + '".';
+        firstMatch.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    } else {
+        status.textContent = "";
+        document.getElementById("ncert").scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+});
+
+/* NCERT class filters */
+const classButtons = document.querySelectorAll(".class-filter");
+const ncertCards = document.querySelectorAll(".ncert-card");
+
+const classGroups = {
+    primary: ["01", "02", "03", "04", "05"],
+    middle: ["06", "07", "08"],
+    secondary: ["09", "10"],
+    senior: ["11", "12"]
+};
+
+classButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        classButtons.forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const group = button.dataset.class;
+        let visible = 0;
+
+        ncertCards.forEach(function(card) {
+            const number = card.querySelector(".class-number")
+                .textContent.trim();
+
+            const matches = group === "all" ||
+                classGroups[group].includes(number);
+
+            card.classList.toggle("search-hidden", !matches);
+
+            if (matches) visible++;
+        });
+
+        document.getElementById("ncertStatus").textContent =
+            "Showing " + visible + " classes.";
+    });
+});
+
+/* Clear old search filters when the user edits the search */
+searchInput.addEventListener("input", function() {
+    if (searchInput.value.trim() === "") {
+        searchableItems.forEach(function(item) {
+            item.classList.remove("search-hidden");
+        });
+
+        document.getElementById("ncertStatus").textContent = "";
+    }
+});
+</script>
+
+</body>
+</html>
+```
