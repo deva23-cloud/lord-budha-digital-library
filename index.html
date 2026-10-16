@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
 <title>Lord Budha Digital Library | Indian Education Hub</title>
 
 <meta name="description"
-content="Lord Budha Digital Library provides access to NCERT textbooks, Indian newspapers, daily current affairs, and competitive examination resources.">
+content="Lord Budha Digital Library helps Indian students discover free textbooks, educational books, current affairs, newspapers, and competitive examination resources.">
 
 <style>
 :root {
@@ -92,8 +91,13 @@ header {
     place-items: center;
     background: var(--green);
     color: var(--gold);
-    border-radius: 12px;
+    border-radius: 50%;
     font-size: 26px;
+    flex: 0 0 49px;
+}
+.brand-icon svg {
+    width: 43px;
+    height: 43px;
 }
 
 .brand h1 {
@@ -228,7 +232,7 @@ nav a:hover {
 
 .quick-links {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 16px;
     padding: 0 7%;
     margin-top: -28px;
@@ -749,15 +753,6 @@ footer {
     .footer-bottom {
         flex-direction: column;
     }
-
-      .profile-img {
-            width: 5px;
-            height: 5px;
-            border-radius: 5%;
-            object-fit: cover;
-            border: 5px solid #ffffff;
-            margin-bottom: 2px
-          }
    
     
 }
@@ -766,19 +761,23 @@ footer {
 <body>
  
 <div class="container">
- 
-<!-- Profile Image -->
-        <img src="C:\Users\INP\Downloads\developer.png" alt="My Profile Photo" class="profile-img">
-
-
-
 <div class="topbar">
     A KNOWLEDGE HUB FOR INDIA • LEARN TODAY, LEAD TOMORROW
 </div>
 
 <header>
     <a class="brand" href="#home" aria-label="Lord Budha Digital Library home">
-        <div class="brand-icon">📚</div>
+        <div class="brand-icon" aria-label="Buddha and lotus logo" role="img">
+            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".65"/>
+                <path d="M17 47c4-5 9-7 15-7s11 2 15 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M21 43c-5-3-8-7-9-12 7 1 12 5 15 11M43 43c5-3 8-7 9-12-7 1-12 5-15 11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+                <path d="M24 34c-3-4-4-8-2-12 4 2 7 5 8 10M40 34c3-4 4-8 2-12-4 2-7 5-8 10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+                <path d="M32 11c-5 5-7 10-5 15l5 5 5-5c2-5 0-10-5-15Z" fill="currentColor"/>
+                <path d="M25 28c-2 4-1 8 2 10h10c3-2 4-6 2-10l-7 4-7-4Z" fill="currentColor"/>
+                <path d="M23 39h18M19 51h26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+        </div>
         <div>
             <h1>Lord Budha Digital Library</h1>
             <p> By Devarth Yadav </p>
@@ -787,6 +786,7 @@ footer {
 
     <nav>
         <a href="#home">Home</a>
+        <a href="#free-books">Free Books</a>
         <a href="#current-affairs">Current Affairs</a>
         <a href="#ncert">NCERT Books</a>
         <a href="#newspapers">Newspapers</a>
@@ -836,6 +836,12 @@ footer {
         <div class="quick-icon">🗞️</div>
         <h3>Daily Current Affairs</h3>
         <p>Stay informed about India and the world.</p>
+    </a>
+
+    <a class="quick-card" href="#free-books">
+        <div class="quick-icon">📖</div>
+        <h3>Free Books</h3>
+        <p>Find free, legal textbooks and learning materials.</p>
     </a>
 
     <a class="quick-card" href="#ncert">
@@ -916,6 +922,65 @@ footer {
     <p style="margin-top:22px;font-size:12px;color:#d0dfd3;">
         Note: These are links to external sources, not an automatically
         updated news feed. Visit the sources for the latest reports.
+    </p>
+</section>
+
+<!-- FREE BOOKS -->
+<section class="section section-white" id="free-books">
+    <div class="section-heading">
+        <div>
+            <div class="section-label">Learn Without Barriers</div>
+            <h2>Free Books & Study Materials</h2>
+            <p>Open trusted sources for free textbooks, school resources, and openly licensed books.</p>
+        </div>
+    </div>
+
+    <div class="card-grid searchable">
+        <article class="resource-card" data-title="NCERT free textbooks classes 1 12">
+            <div class="resource-icon">📘</div>
+            <h3>NCERT Textbooks</h3>
+            <p>Find official school textbooks for Classes 1–12. Choose your class and subject on the NCERT website.</p>
+            <a class="card-button" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener noreferrer">Find Free Textbooks ↗</a>
+        </article>
+
+        <article class="resource-card" data-title="ePathshala free digital books NCERT">
+            <div class="resource-icon">🎒</div>
+            <h3>ePathshala</h3>
+            <p>Access NCERT digital textbooks and educational resources for students and teachers.</p>
+            <a class="card-button" href="https://epathshala.nic.in/" target="_blank" rel="noopener noreferrer">Open ePathshala ↗</a>
+        </article>
+
+        <article class="resource-card" data-title="DIKSHA free school books learning resources India">
+            <div class="resource-icon">🇮🇳</div>
+            <h3>DIKSHA Learning Resources</h3>
+            <p>Explore digital learning content provided for school education in India.</p>
+            <a class="card-button" href="https://diksha.gov.in/" target="_blank" rel="noopener noreferrer">Explore DIKSHA ↗</a>
+        </article>
+
+        <article class="resource-card" data-title="OpenStax free open licensed textbooks science maths">
+            <div class="resource-icon">🔬</div>
+            <h3>OpenStax Textbooks</h3>
+            <p>Read free, openly licensed textbooks in subjects including science, mathematics, and more.</p>
+            <a class="card-button" href="https://openstax.org/subjects" target="_blank" rel="noopener noreferrer">Browse Open Textbooks ↗</a>
+        </article>
+
+        <article class="resource-card" data-title="Project Gutenberg free public domain ebooks literature">
+            <div class="resource-icon">📚</div>
+            <h3>Project Gutenberg</h3>
+            <p>Discover free e-books, especially classic literature that is in the public domain.</p>
+            <a class="card-button" href="https://www.gutenberg.org/" target="_blank" rel="noopener noreferrer">Browse E-books ↗</a>
+        </article>
+
+        <article class="resource-card" data-title="National Digital Library of India educational books">
+            <div class="resource-icon">🏛️</div>
+            <h3>National Digital Library of India</h3>
+            <p>Search a broad collection of educational learning resources from participating institutions.</p>
+            <a class="card-button" href="https://ndl.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer">Search Library ↗</a>
+        </article>
+    </div>
+
+    <p style="margin-top:20px;color:#68776e;font-size:12px;">
+        Availability and download permissions vary by source. This library links to official or authorized resources; only upload or redistribute files when you have permission.
     </p>
 </section>
 
@@ -1407,4 +1472,3 @@ searchInput.addEventListener("input", function() {
 
 </body>
 </html>
-```
